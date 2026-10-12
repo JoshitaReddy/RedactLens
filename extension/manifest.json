@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "RedactLens",
+  "version": "0.1.0",
+  "description": "Local-first detection and one-click redaction of PII and secrets before you send them to an AI chatbot.",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*", "https://claude.ai/*"],
+      "js": ["detectors.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
